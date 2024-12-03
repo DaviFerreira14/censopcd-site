@@ -1,0 +1,259 @@
+/* sobre.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+/*Header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #38B1FF; 
+    color: white;
+    padding: 31px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo {
+    height: 50px; 
+    margin-right: 15px;
+}
+
+.header-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-menu li {
+    margin: 0 35px;
+}
+
+.header-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-menu a:hover {
+    text-decoration: underline; 
+}
+
+.header-menu a i {
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+/*Fim da Header*/
+
+/*Sidebar*/
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; 
+}
+
+.sidebar{
+    position: fixed;
+    width: 253px;
+    height: 100%;
+    left: 0;
+    background: #f4f4f4;
+    border-right: 1px solid #ddd;
+    margin-top: 112px;
+}
+
+.sidebar .sidebarul{
+    background: #f4f4f4;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar .sidebarul .sidebarli{
+    line-height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .sidebarul .sidebarli .sidebar-a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 40px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .sidebarul .sidebarli .sidebar-a:hover{
+    color: #38B1FF;
+    background: #d4d4d4;
+    border-left-color: #38B1FF;
+}
+
+.sidebar .sidebarul .sidebarul{
+    position: static;
+    display: none;
+}
+
+.sidebar .sidebarul .sidebarul .sidebarli{
+    line-height: 42px;
+    border-bottom: none;
+}
+
+.sidebar .sidebarul .sidebarul .sidebarli .sidebar-a{
+    font-size: 17px;
+    color: #007bff;
+    padding-left: 80px;
+}
+
+.sidebar .sidebarul .sidebarul .sidebarli .sidebar-a:hover{
+    color: #38B1FF;
+    background: #d4d4d4;
+}
+
+#fundo{
+    color: #38B1FF;
+    background: #d4d4d4;
+    border-left: 3px solid transparent;
+    border-left-color: #38B1FF;
+}
+/*fim da Sidebar*/
+
+
+.content {
+    margin-left: 260px;
+    margin-top: 160px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.faq {
+    margin-left: 35px;
+    margin-right: 65px;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    padding: 35px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.faq h3 {
+    margin-bottom: 10px;
+}
+
+/* Tornar o layout responsivo */
+
+/* Geral - Reduzir o tamanho do header e sidebar em telas menores */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .header-title {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .header-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-menu li {
+        margin: 5px 0;
+    }
+
+    .sidebar {
+        width: 200px;
+        margin-top: 70px; 
+    }
+
+    .sidebar .sidebarul .sidebarli .sidebar-a {
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    .content {
+        margin-left: 210px; /* Sidebar menor */
+        margin-top: 100px; /* Header menor */
+        padding: 15px;
+    }
+}
+
+/* Telas muito pequenas - Exibir layout em uma coluna */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .header-menu ul {
+        display: none; /* Esconder o menu se necessário em telas muito pequenas */
+    }
+
+    .sidebar {
+        width: 100px;
+    }
+
+    .sidebar .sidebarul .sidebarli .sidebar-a {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .content {
+        margin-left: 110px;
+        margin-top: 90px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .faq {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 15px;
+    }
+
+    .faq h3 {
+        font-size: 16px;
+    }
+}
+
+/* Ajustes para telas grandes */
+@media screen and (min-width: 1024px) {
+    .content {
+        margin-left: 260px;
+        margin-top: 160px;
+        padding: 25px;
+    }
+
+    .faq {
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 40px;
+    }
+}
